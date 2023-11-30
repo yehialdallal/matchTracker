@@ -13,7 +13,11 @@ def create_app(config_class=Config):
     # Register blueprints here
 
     from app.main import bp as main_bp
+    from app.users import bp as users_bp
+    
     app.register_blueprint(main_bp)
+
+    app.register_blueprint(users_bp , url_prefix='/users')
 
     #from app.posts import bp as posts_bp
     #app.register_blueprint(posts_bp, url_prefix='/posts')
