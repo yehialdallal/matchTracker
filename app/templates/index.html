@@ -1,8 +1,26 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <span class="title"><h1>{% block title %} The Home Page of FlaskApp {% endblock %}</h1></span>
-    <div class="content">
-        <h2>This is the main Flask blueprint</h2>
+{% block header_content %}
+<form action="#">
+    <div class="row form-ro">
+
+        <div class="col-md-5">
+            <input placeholder="Enter User Name" type="text" class="form-control form-control-sm">
+            <label class="container">
+                <input type="checkbox">
+                <span class="checkmark"></span>Remember me
+            </label>
+        </div>
+        <div class="col-md-5">
+            <input placeholder="Enter Password" type="text" class="form-control form-control-sm">
+            <a href="">Forget Password ?</a>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-dark" id="signin">Sign In</button>
+            <button class= "btn btn-light" id="signin">GoogleLogin</button>
+            
+        </div>
+
     </div>
+</form>
 {% endblock %}

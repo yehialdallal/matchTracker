@@ -1,58 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %} {% endblock %} - FlaskApp</title>
-    <style>
-        h2 {
-            width: 100%;
-        }
-
-        .title {
-            margin: 5px;
-            width: 100%;
-        }
-
-        .content {
-            margin: 5px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-
-        .post {
-            flex: 20%;
-            padding: 10px;
-            margin: 5px;
-            background-color: #f3f3f3;
-            inline-size: 100%;
-        }
-
-        .title a {
-            color: #00a36f;
-            text-decoration: none;
-        }
-
-        nav a {
-            color: #d64161;
-            font-size: 3em;
-            margin-left: 50px;
-            text-decoration: none;
-        }
-
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Live Tracker</title>
+<!-- Write your comments here -->
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawsom-all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-    <nav>
-        <a href="{{ url_for('main.index') }}">FlaskApp</a>
-        <a href="{{ url_for('users.index') }}">Users</a>
-        <a href="#">Categories</a>
-        <a href="#">Questions</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %} {% endblock %}
+    <div class="container-fluid ">
+       <header>
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-3">
+                    <h2 class="w-100">Live Tracker</h2>
+                        <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-lock"></i></a>
+                   </div>
+                   <div id="menu" class="col-md-9 d-none d-md-block">
+                    {% block header_content %} {% endblock %}
+                   </div>
+               </div>
+           </div>
+       </header>
+           
+           <div class="register">
+               <div class="container">
+                  <div class="row">
+                      <div class="col-lg-7 col-md-6">
+                           <div class="ditk-inf sup-oi">
+                                <h2 class="w-100">We are the Best <br>Internet Partner for You</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur maximus justo, et malesuada dolor dictum in. Maecenas nec elit risus. Nunc ut nunc aliquam, blandit magna et, tempus quam</p>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Nam facilisis nibh sed nunc aliquam, et volutpat ipsum</li>
+                                    <li><i class="fas fa-check"></i> dignissim sapien. Vestibulum non leo fringilla, luctus turpis quis</li>
+                                    <li> <i class="fas fa-check"></i> Aliquam vitae augue nisi. Phasellus ut dui a neque</li>
+                                </ul>
+                                
+                            </div> 
+                       </div>
+                       <div class="col-lg-5 col-md-6 ">
+                           <div class="register-box">
+                               <h2>New Registeration</h2>
+                               <form action="#">
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                       <label for="">Full Name</label>
+                                       <span>:</span>
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="text" placeholder="Enter Full Name" class="form-control form-control-sm">
+                                   </div>
+                               </div>
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                       <label for="">Email Address</label>
+                                       <span>:</span>
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="text" placeholder="Enter Full Name" class="form-control form-control-sm">
+                                   </div>
+                               </div>
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                       <label for="">Mobile Number</label>
+                                       <span>:</span>
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="text" placeholder="Enter Full Name" class="form-control form-control-sm">
+                                   </div>
+                               </div>
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                       <label for="">Enter Password</label>
+                                       <span>:</span>
+                                   </div>
+                                   <div class="col-md-8">
+                                       <input type="text" placeholder="Enter Full Name" class="form-control form-control-sm">
+                                   </div>
+                               </div>
+                               <div class="row form-row">
+                                   <div class="col-md-4">
+                                      
+                                   </div>
+                                   <div class="col-md-8">
+                                       <button class="btn btn-dark">Sign Up</button>
+                                   </div>
+                               </div>
+                               </form>
+                           </div>
+                           
+                       </div>
+                  </div>
+               </div>
+           </div>
+            <div class="foter-credit">
+                <a href="https://smarteyeapps.com/">Designed by : Smarteyeapps.com</a>  
+            </div>
+            
     </div>
+   
 </body>
+
+<script src="static/js/jquery-3.2.1.min.js"></script>
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/script.js"></script>
+
+
 </html>
