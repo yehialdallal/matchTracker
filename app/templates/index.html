@@ -16,11 +16,86 @@
             <a href="">Forget Password ?</a>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-dark" id="signin">Sign In</button>
-            <button class= "btn btn-light" id="signin">Github Login</button>
-            
+            <button class="btn btn-dark" id="signin" type="submit">Sign In</button>
+            <button class="btn btn-light" id="signin">Github Login</button>
+
         </div>
 
     </div>
 </form>
+{% endblock %}
+
+{% block main_content %}
+
+<div class="row">
+    <div class="col-lg-7 col-md-6">
+        <div class="ditk-inf sup-oi">
+            <h2 class="w-100">We are the Best <br>Internet Partner for You</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur maximus justo, et malesuada dolor
+                dictum in. Maecenas nec elit risus. Nunc ut nunc aliquam, blandit magna et, tempus quam</p>
+            <ul>
+                <li><i class="fas fa-check"></i> Nam facilisis nibh sed nunc aliquam, et volutpat ipsum</li>
+                <li><i class="fas fa-check"></i> dignissim sapien. Vestibulum non leo fringilla, luctus turpis quis</li>
+                <li> <i class="fas fa-check"></i> Aliquam vitae augue nisi. Phasellus ut dui a neque</li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-6 ">
+        <div class="register-box">
+            <h2>New Registeration</h2>
+            <form action="#">
+                <div class="row form-row">
+                    <div class="col-md-4">
+                        <label for="">Full Name</label>
+                        <span>:</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" type="name" name="name" placeholder="Enter Full Name"
+                            class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="col-md-4">
+                        <label for="">Email Address</label>
+                        <span>:</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" type="email" name="email" placeholder="Enter Full Name"
+                            class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="col-md-4">
+                        <label for="">Mobile Number</label>
+                        <span>:</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" type="number" name="number" placeholder="Enter Full Name"
+                            class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="col-md-4">
+                        <label for="">Enter Password</label>
+                        <span>:</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" type="password" name="password" placeholder="Enter Full Name"
+                            class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-8">
+                        <button class="btn btn-dark">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
 {% endblock %}
