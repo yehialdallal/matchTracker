@@ -1,24 +1,31 @@
 {% extends 'base.html' %}
 
 {% block header_content %}
-<form action="#">
+<form method="POST" action="{{ url_for('main.index') }}">
+    {{ login_form.hidden_tag() }}
     <div class="row form-ro">
 
         <div class="col-md-5">
-            <input placeholder="Enter User Name" type="text" class="form-control form-control-sm">
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>Remember me
+            {{ login_form.login_email.label(class="container") }}
+            {{ login_form.login_email(placeholder="Enter email",class="form-control form-control-sm") }}
+            {% for error in login_form.login_email.errors %}
+            <span style="color: red;">{{ error }}</span><br>
+            {% endfor %}
+            <input type="checkbox">
+            <span class="checkmark"></span>Remember me
             </label>
         </div>
         <div class="col-md-5">
-            <input placeholder="Enter Password" type="text" class="form-control form-control-sm">
+            {{ login_form.password1.label(class="form-label") }}
+            {{ login_form.password1(placeholder="Enter Password", class="form-control form-control-sm") }}
+            {% for error in login_form.password1.errors %}
+            <span style="color: red;">{{ error }}</span><br>
+            {% endfor %}
             <a href="">Forget Password ?</a>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-dark" id="signin" type="submit">Sign In</button>
-            <button class="btn btn-light" id="signin">Github Login</button>
-
+            {{ login_form.submit1(class="btn btn-dark") }}
+            <a href="">githublogin</a>
         </div>
 
     </div>
@@ -31,8 +38,13 @@
     <div class="col-lg-7 col-md-6">
         <div class="ditk-inf sup-oi">
             <h2 class="w-100">We are the Best <br>Internet Partner for You</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur maximus justo, et malesuada dolor
-                dictum in. Maecenas nec elit risus. Nunc ut nunc aliquam, blandit magna et, tempus quam</p>
+            <p>At liveTracker, we're passionate about bringing you the exhilarating world of football right to your
+                fingertips.you're in for a thrilling experience!
+                Get ready to immerse yourself in the heart-pounding action of live football matches! Our platform is
+                your go-to destination for real-time updates, scores, and comprehensive insights into ongoing games.
+                Join us in celebrating the passion, the drama, and the sheer joy of football.
+                Thank you for choosing us to share in your football journey. Let's kick off this exciting adventure
+                together!"</p>
             <ul>
                 <li><i class="fas fa-check"></i> Nam facilisis nibh sed nunc aliquam, et volutpat ipsum</li>
                 <li><i class="fas fa-check"></i> dignissim sapien. Vestibulum non leo fringilla, luctus turpis quis</li>
@@ -44,15 +56,19 @@
     <div class="col-lg-5 col-md-6 ">
         <div class="register-box">
             <h2>New Registeration</h2>
-            <form action="#">
+            
+            <form method="POST" action="{{ url_for('main.index') }}">
+                {{ signup_form.hidden_tag() }}
                 <div class="row form-row">
                     <div class="col-md-4">
                         <label for="">Full Name</label>
                         <span>:</span>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" type="name" name="name" placeholder="Enter Full Name"
-                            class="form-control form-control-sm">
+                        {{ signup_form.name(placeholder="Enter Full Name",class="form-control form-control-sm") }}
+                        {% for error in signup_form.name.errors %}
+                            <span style="color: red;">{{ error }}</span><br>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="row form-row">
@@ -61,8 +77,10 @@
                         <span>:</span>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" type="email" name="email" placeholder="Enter Full Name"
-                            class="form-control form-control-sm">
+                        {{ signup_form.signup_email(placeholder="Enter Email",class="form-control form-control-sm") }}
+                        {% for error in signup_form.signup_email.errors %}
+                            <span style="color: red;">{{ error }}</span><br>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="row form-row">
@@ -71,8 +89,10 @@
                         <span>:</span>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" type="number" name="number" placeholder="Enter Full Name"
-                            class="form-control form-control-sm">
+                        {{ signup_form.mobile(placeholder="Enter Mobile Number",class="form-control form-control-sm") }}
+                        {% for error in signup_form.mobile.errors %}
+                            <span style="color: red;">{{ error }}</span><br>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="row form-row">
@@ -81,16 +101,18 @@
                         <span>:</span>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" type="password" name="password" placeholder="Enter Full Name"
-                            class="form-control form-control-sm">
+                        {{ signup_form.password2(placeholder="Enter Password",class="form-control form-control-sm") }}
+                        {% for error in signup_form.password2.errors %}
+                            <span style="color: red;">{{ error }}</span><br>
+                        {% endfor %}
+                       
                     </div>
                 </div>
                 <div class="row form-row">
                     <div class="col-md-4">
-
                     </div>
                     <div class="col-md-8">
-                        <button class="btn btn-dark">Sign Up</button>
+                        {{ signup_form.submit2(class="btn btn-dark") }}
                     </div>
                 </div>
             </form>

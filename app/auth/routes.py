@@ -11,15 +11,17 @@ def index():
 
 @bp.route('/logout')
 def logout():
-    return 'logout'
+    return render_template('index.html')
 
 @bp.route('/login')
 def login():
-    return 'Login'
+    return 'login comoleted'
+    #return render_template('auth/index.html')
 
 @bp.route('/signup')
 def signup():
-    return 'Signup'
+    return 'signup completed'
+    #return render_template('index.html')
 
 @bp.route('/signup', methods=['POST'])
 def signup_post():

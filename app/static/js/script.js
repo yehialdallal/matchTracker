@@ -76,7 +76,7 @@ content.appendChild(nav);
 ///////////////
 
 // add event listener to the button
-button.addEventListener('click', changeContent);
+//button.addEventListener('click', changeContent);
 
 
 
