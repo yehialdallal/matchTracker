@@ -11,21 +11,20 @@
             {% for error in login_form.login_email.errors %}
             <span style="color: red;">{{ error }}</span><br>
             {% endfor %}
-            <input type="checkbox">
-            <span class="checkmark"></span>Remember me
-            </label>
+            {{ login_form.remember_me(class="checkmark") }} {{ login_form.remember_me.label }}
         </div>
         <div class="col-md-5">
             {{ login_form.password1.label(class="form-label") }}
             {{ login_form.password1(placeholder="Enter Password", class="form-control form-control-sm") }}
             {% for error in login_form.password1.errors %}
-            <span style="color: red;">{{ error }}</span><br>
+            <span style="color: rgb(100, 91, 91);">{{ error }}</span><br>
             {% endfor %}
             <a href="">Forget Password ?</a>
         </div>
         <div class="col-md-2">
             {{ login_form.submit1(class="btn btn-dark") }}
-            <a href="">githublogin</a>
+            <br></br>
+            <a class="btn btn-dark" href="{{ url_for('main.oauth2_authorize', provider='github') }}" >Login with GitHub</a> 
         </div>
 
     </div>
